@@ -1,12 +1,10 @@
 import Title from "./components/Title";
+import Button from "./components/Button";
 
 const App = () => {
   return (
     <div>
-      <Title />
-
-      <Title />
-      <Title />
+      <Button text={"123"} background={"red"} radius="30px" />
     </div>
   );
 };
