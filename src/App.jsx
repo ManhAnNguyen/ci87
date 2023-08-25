@@ -1,23 +1,26 @@
-import Title from "./components/Title";
-import Button from "./components/Button";
-import { useState } from "react";
-
-//state
-//re-render và initial re-render
-//
+import { memo, useRef, useState } from "react";
 
 const App = () => {
-  const [count, setCount] = useState(1);
+  const [persons, setPersons] = useState(["A", "B", "C"]);
+  const [value, setValue] = useState("");
+  const [showName, setShowName] = useState(false);
 
-  const handleClick = () => {
-    setCount(count + 1);
+  const handleAdd = () => {
+    setPersons([...persons, value]);
+    setValue("");
   };
 
   return (
     <>
-      <h1>count :{count}</h1>
-      <button onClick={handleClick}>Count</button>
-      {/* <p>maxium 5</p> */}
+      <p>Username</p>
+      <input />
+      <p>Password</p>
+
+      <input />
+      <p>Confirm password</p>
+
+      <input />
+      <button>Register</button>
     </>
   );
 };

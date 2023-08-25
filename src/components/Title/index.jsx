@@ -1,5 +1,6 @@
 import "./styles.css";
-const Title = ({ title, desc, summary, color, fontSize }) => {
+const Title = ({ title, desc, summary, color, fontSize, exam }) => {
+  console.log("re-render");
   return (
     <>
       <h1
