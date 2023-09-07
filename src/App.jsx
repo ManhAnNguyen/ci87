@@ -1,36 +1,42 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import data from "./data.json";
+import "./app.css";
+import TodoItem from "./components/TodoItem";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [todos, setTodos] = useState(data);
 
-  const handleClick = () => {
-    console.log({ username, password });
+  const handleChange = (id) => {
+    setTodos([
+      ...todos.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      ),
+    ]);
+    toast.success("Success");
   };
 
+  const handleDelete = (id) => {
+    setTodos([...todos.filter((item) => item.id !== id)]);
+    toast.success("Remove success");
+  };
   return (
-    <div>
-      <p>Username</p>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <p>Password</p>
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <p>Confirm password</p>
-      <input />
-      <p>Address</p>
-      <input />
-      <div>
-        <button onClick={handleClick}>Onclick</button>
+    <>
+      <div className="todolist">
+        {todos.map((todo, index) => {
+          return (
+            <TodoItem
+              todo={todo}
+              key={index}
+              handleChange={handleChange}
+              handleDelete={handleDelete}
+            />
+          );
+        })}
       </div>
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 
