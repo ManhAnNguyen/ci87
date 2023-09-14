@@ -1,20 +1,29 @@
-import React, { useRef, useState } from "react";
-import data from "./data.json";
+import React, { useState } from "react";
 import "./app.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-const p = {
-  name: "a",
-};
-
-const { name } = p;
-p.name = "c";
-
-console.log(name);
-
+const circle = ["red", "yellow", "green"];
 const App = () => {
-  return <></>;
+  const [current, setCurrent] = useState(0);
+
+  const onClick = () => {
+    setCurrent(current === 3 ? 1 : current + 1);
+  };
+  return (
+    <div>
+      {circle.map((item, index) => (
+        <div
+          className="circle"
+          key={index}
+          style={{
+            background: index + 1 === current ? item : "gray",
+          }}
+        ></div>
+      ))}
+      <input placeholder="Start" />
+      <input placeholder="Yellow" />
+      <button onClick={onClick}>Click</button>
+    </div>
+  );
 };
 
 export default App;
