@@ -2,19 +2,14 @@ body{
     min-height: 300vh;
 }
 
-.circle{
+.light{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: gray;
 }
 
-.red{
-    background-color: red;
-}
-.yellow{
-    background-color: yellow;
-}
-.green{
-    background-color: green;
+
+
+.light{
+    margin-top: 10px;
 }
