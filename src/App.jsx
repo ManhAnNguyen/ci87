@@ -1,26 +1,25 @@
-import React, { createContext } from "react";
-import GrandParent from "./components/GrandParent";
+import React, { useState } from "react";
 
-const name = "mindX";
-
-export const AppContext = createContext(null);
-
+//closure  : tạo 1 hàm trong 1 hàm khác
 const App = () => {
+  const [count, setCount] = useState(0);
+
+  const onClick = () => {
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
+    //closure
+    // setCount(0 + 1);
+    // setCount(0 + 1);
+  };
+
+  console.log(count);
   return (
     <>
-      <AppContext.Provider
-        value={{
-          name,
-          age: 19,
-          address: "HN",
-        }}
-      >
-        <GrandParent />
-      </AppContext.Provider>
+      <button onClick={onClick}>Switch</button>
     </>
   );
 };
 
 export default App;
 
-//context -> global state
+//VDOM : diff<xd khi nào cập nhật> va reconcinlation algorithm <cập nhật như nào>
