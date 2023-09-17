@@ -1,12 +1,5 @@
-## component
+//jsx : kp html , cú pháp mở rộng js
 
-jsx
-state và events;
-
-events -> hành động ấn nút, gõ input
-state -> dùng để lưu trữ dự liệu trong 1 components
-
-props va state
-conditional rendering : dieu kien rendering
-
-render cho cta 1 jsx theo ý mà cta mong muốn
+//react-router-dom
+1 : install package : npm in react-router-dom
+2 : set up router cho app

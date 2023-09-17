@@ -1,15 +1,25 @@
-body{
-    min-height: 300vh;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.light{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.navlinks{
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    color: white;
+    height: 40px;
+    align-items: center;
+    gap: 30px;
 }
 
+.navlinks a{
+    color: white;
+    transition: all .2s linear;
+}
 
-
-.light{
-    margin-top: 10px;
+.navlinks a.isActive{
+    color: red;
+    font-weight: bold;
 }

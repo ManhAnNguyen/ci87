@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Phone from "./pages/Phone";
+import Laptop from "./pages/Laptop";
+import Tablet from "./pages/Tablet";
+import "./app.css";
+import CustomLink from "./components/CustomLink";
 
-//closure  : tạo 1 hàm trong 1 hàm khác
 const App = () => {
-  const [count, setCount] = useState(0);
-
-  const onClick = () => {
-    setCount((prev) => prev + 1);
-    setCount((prev) => prev + 1);
-    //closure
-    // setCount(0 + 1);
-    // setCount(0 + 1);
-  };
-
-  console.log(count);
   return (
-    <>
-      <button onClick={onClick}>Switch</button>
-    </>
+    <BrowserRouter>
+      <CustomLink />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/phone" element={<Phone />} />
+        <Route path="/laptop" element={<Laptop />} />
+        <Route path="/tablet" element={<Tablet />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
 export default App;
-
-//VDOM : diff<xd khi nào cập nhật> va reconcinlation algorithm <cập nhật như nào>
