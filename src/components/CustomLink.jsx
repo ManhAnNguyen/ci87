@@ -7,6 +7,10 @@ const data = [
     text: "Home",
   },
   {
+    to: "/products",
+    text: "Products",
+  },
+  {
     to: "/laptop",
     text: "Laptop",
   },
@@ -28,8 +32,8 @@ const CustomLink = () => {
     <div className="navlinks">
       {data.map((item) => (
         <NavLink
-          key={item.pathname}
-          className={({ isActive }) => isActive && "isActive"}
+          key={item.to}
+          className={({ isActive }) => (isActive ? "isActive" : "")}
           to={item.to}
         >
           {item.text}
