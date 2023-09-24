@@ -18,7 +18,7 @@ const Products = () => {
   });
 
   useEffect(() => {
-    const getData = async () => {
+    (async () => {
       try {
         setProducts((prev) => ({ ...prev, isLoading: true }));
         const response = await axios.get("https://fakestoreapi.com/products");
@@ -29,9 +29,9 @@ const Products = () => {
       }
 
       setProducts((prev) => ({ ...prev, isLoading: false }));
-    };
+    })();
 
-    getData();
+    // getData();
   }, []);
 
   const { isLoading, error, data: products } = product;
