@@ -3,23 +3,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    padding: 100px;
+}
 
-.navlinks{
+.countdown{
     display: flex;
-    justify-content: center;
-    background-color: green;
-    color: white;
-    height: 40px;
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.navlinks a{
-    color: white;
-    transition: all .2s linear;
+.timer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.navlinks a.isActive{
-    color: red;
-    font-weight: bold;
+.timer article{
+    font-size: 20px;
 }
